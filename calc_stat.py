@@ -1,7 +1,10 @@
 import math
 import random
+import json
 
-def generateIVs():
+###### IV GENERATION #################################################
+
+def generate_ivs():
  
     iv_dictionary = {
         "hp":0,
@@ -17,8 +20,43 @@ def generateIVs():
     
     return iv_dictionary
 
+######################################################################
 
-final_stats = {
+###### NATURE ########################################################
+
+def choose_random_json_elem(file):
+    with open(file, 'r') as file:
+        data = json.load(file)
+        random_key = random.choice(list(data.keys()))
+        random_element = data[random_key]
+        return random_element
+    
+######################################################################
+# print(nature)
+
+# nature_name = nature['name']
+# nature_positive_stat = None
+# nature_negative_stat = None
+# favorite_flavor = None
+# disliked_flavor = None
+
+# if nature['increased_stat']:
+#     nature_positive_stat = nature['increased_stat']
+
+# if nature['decreased_stat']:
+#     nature_positive_stat = nature['decreased_stat']
+
+# if nature['increased_stat']:
+#     nature_positive_stat = nature['increased_stat']
+
+# if nature['increased_stat']:
+#     nature_positive_stat = nature['increased_stat']
+
+######################################################################
+
+def calculate_final_stats(base_stat, iv, ev, nature, level):
+
+    final_stats = {
     "hp":0, 
     "attack":0, 
     "defense":0, 
@@ -27,61 +65,79 @@ final_stats = {
     "speed":0
     }
 
-base_stat = {
-    "hp":108, 
-    "attack":130, 
-    "defense":95, 
-    "special_attack":80, 
-    "special_defense":85, 
-    "speed":102
-    }
+    name = "Garchomp"
 
-ev = {
-    "hp":74, 
-    "attack":190,
-    "defense":91, 
-    "special_attack":48, 
-    "special_defense":84, 
-    "speed":23
-    }
-
-level = 78
-
-nature = {
-    "attack":1.1, 
-    "defense":1, 
-    "special_attack":0.9, 
-    "special_defense":1, 
-    "speed":1
-    }
-
-name = "Garchomp"
-
-def calculateFinalStats():
     print(name,'\'s final stats are as follows:')
+
+    if "increased_stat" in nature:
+        inc_stat = nature["increased_stat"]
+
+    if "decreased_stat" in nature:
+        dec_stat = nature["decreased_stat"]
+
     for stat in final_stats:
-        # print(stat, "->", final_stats[stat])
+        try:
+            alpha = (2 * base_stat[stat] 
+                    + iv[stat] 
+                    + math.floor(ev[stat]/4))
+            beta = math.floor((alpha * level) / 100)
 
-        alpha = (2 * base_stat[stat] 
-                 + iv_dictionary[stat] 
-                 + math.floor(ev[stat]/4))
-        # print('2 x', base_stat[stat], '+', iv[stat], '+', ev[stat], '/4')
-        beta = math.floor((alpha * level) / 100)
+            if stat in "hp":
+                calc = math.floor(beta + level + 10)
+            
+            elif ("increased_stat" in nature and 
+                  stat == inc_stat):    
+                calc = math.floor((beta + 5) * 1.1)
+            
+            elif ("decreased_stat" in nature and 
+                  stat == dec_stat):    
+                calc = math.floor((beta + 5) * 0.9)
+            
+            else:                
+                calc = math.floor((beta + 5))
+            
+            final_stats[stat] = calc
+            
+            print(stat, '->', final_stats[stat])
+        except KeyError as e:
+            print(f"KeyError: {e}")
+        except TypeError as e:
+            print(f"TypeError: {e}")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
 
-        if stat in "hp":
-            calc = math.floor(beta + level + 10)
-        else:
-            calc = math.floor((beta + 5) * nature[stat])
+    return final_stats
 
-        # print(calc)
-        final_stats[stat] = calc
+def main():
+    # Placeholder base stats for a Garchomp
+    # Also placeholder ev and level
+
+    base_stat = {
+        "hp":108, 
+        "attack":130, 
+        "defense":95, 
+        "special_attack":80, 
+        "special_defense":85, 
+        "speed":102
+        }
         
-        print(stat, '->', final_stats[stat])
+    ev = {
+        "hp":74, 
+        "attack":190,
+        "defense":91, 
+        "special_attack":48, 
+        "special_defense":84, 
+        "speed":23
+        }
 
+    level = 78
 
-iv_dictionary = generateIVs()
+    iv = generate_ivs()
+    nature = choose_random_json_elem('pkmn_nature.json')
+    final_stats = calculate_final_stats(base_stat, iv, ev, nature, level)
 
-calculateFinalStats()
+    print('Nature:', nature['name'])
+    print(final_stats)        
 
-# calc = math.floor(( ( ((2 * base_stat) + iv + (ev/4) * level) / 100) ) + level + 10)
-
+if __name__:
+    main()
