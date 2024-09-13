@@ -1,4 +1,22 @@
 import math
+import random
+
+def generateIVs():
+ 
+    iv_dictionary = {
+        "hp":0,
+        "attack":0,
+        "defense":0,
+        "special_attack":0,
+        "special_defense":0,
+        "speed":0
+    }
+    for stat in iv_dictionary:
+        iv_dictionary[stat] = random.randint(0,31)
+        # print(stat, '->', iv_dictionary[stat])
+    
+    return iv_dictionary
+
 
 final_stats = {
     "hp":0, 
@@ -16,15 +34,6 @@ base_stat = {
     "special_attack":80, 
     "special_defense":85, 
     "speed":102
-    }
-
-iv = {
-    "hp":24, 
-    "attack":12, 
-    "defense":30, 
-    "special_attack":16, 
-    "special_defense":23, 
-    "speed":5
     }
 
 ev = {
@@ -53,7 +62,9 @@ def calculateFinalStats():
     for stat in final_stats:
         # print(stat, "->", final_stats[stat])
 
-        alpha = (2 * base_stat[stat] + iv[stat] + math.floor(ev[stat]/4))
+        alpha = (2 * base_stat[stat] 
+                 + iv_dictionary[stat] 
+                 + math.floor(ev[stat]/4))
         # print('2 x', base_stat[stat], '+', iv[stat], '+', ev[stat], '/4')
         beta = math.floor((alpha * level) / 100)
 
@@ -66,6 +77,9 @@ def calculateFinalStats():
         final_stats[stat] = calc
         
         print(stat, '->', final_stats[stat])
+
+
+iv_dictionary = generateIVs()
 
 calculateFinalStats()
 
