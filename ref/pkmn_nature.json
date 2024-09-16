@@ -1,0 +1,157 @@
+{
+    "0": {
+        "nature": "Hardy"
+    },
+    "1": {
+        "nature": "Lonely",
+        "increased_stat": "attack",
+        "decreased_stat": "defense",
+        "favorite_flavor": "spicy",
+        "disliked_flavor": "sour"
+    },
+    "2": {
+        "nature": "Brave",
+        "increased_stat": "attack",
+        "decreased_stat": "Speed",
+        "favorite_flavor": "spicy",
+        "disliked_flavor": "sweet"
+    },
+    "3": {
+        "nature": "Adamant",
+        "increased_stat": "attack",
+        "decreased_stat": "special_attack",
+        "favorite_flavor": "spicy",
+        "disliked_flavor": "dry"
+    },
+    "4": {
+        "nature": "Naughty",
+        "increased_stat": "attack",
+        "decreased_stat": "special_defense",
+        "favorite_flavor": "spicy",
+        "disliked_flavor": "bitter"
+    },
+    "5": {
+        "nature": "Bold",
+        "increased_stat": "defense",
+        "decreased_stat": "attack",
+        "favorite_flavor": "sour",
+        "disliked_flavor": "spicy"
+    },
+    "6": {
+        "nature": "Docile"
+    },
+    "7": {
+        "nature": "Relaxed",
+        "increased_stat": "defense",
+        "decreased_stat": "Speed",
+        "favorite_flavor": "sour",
+        "disliked_flavor": "sweet"
+    },
+    "8": {
+        "nature": "Impish",
+        "increased_stat": "defense",
+        "decreased_stat": "special_attack",
+        "favorite_flavor": "sour",
+        "disliked_flavor": "sweet"
+    },
+    "9": {
+        "nature": "Lax",
+        "increased_stat": "defense",
+        "decreased_stat": "special_defense",
+        "favorite_flavor": "sour",
+        "disliked_flavor": "bitter"
+    },
+    "10": {
+        "nature": "Timid",
+        "increased_stat": "speed",
+        "decreased_stat": "attack",
+        "favorite_flavor": "sweet",
+        "disliked_flavor": "spicy"
+    },
+    "11": {
+        "nature": "Hasty",
+        "increased_stat": "speed",
+        "decreased_stat": "defense",
+        "favorite_flavor": "sweet",
+        "disliked_flavor": "sour"
+    },
+    "12": {
+        "nature": "Serious"
+    },
+    "13": {
+        "nature": "Jolly",
+        "increased_stat": "speed",
+        "decreased_stat": "special_attack",
+        "favorite_flavor": "sweet",
+        "disliked_flavor": "dry"
+    },
+    "14": {
+        "nature": "Naive",
+        "increased_stat": "speed",
+        "decreased_stat": "special_defense",
+        "favorite_flavor": "sweet",
+        "disliked_flavor": "bitter"
+    },
+    "15": {
+        "nature": "Modest",
+        "increased_stat": "special_attack",
+        "decreased_stat": "attack",
+        "favorite_flavor": "dry",
+        "disliked_flavor": "spicy"
+    },
+    "16": {
+        "nature": "Mild",
+        "increased_stat": "special_attack",
+        "decreased_stat": "defense",
+        "favorite_flavor": "dry",
+        "disliked_flavor": "sour"
+    },
+    "17": {
+        "nature": "Quiet",
+        "increased_stat": "special_attack",
+        "decreased_stat": "speed",
+        "favorite_flavor": "dry",
+        "disliked_flavor": "sweet"
+    },
+    "18": {
+        "nature": "Bashful"
+    },
+    "19": {
+        "nature": "Rash",
+        "increased_stat": "special_attack",
+        "decreased_stat": "special_defense",
+        "favorite_flavor": "dry",
+        "disliked_flavor": "bitter"
+    },
+    "20": {
+        "nature": "Calm",
+        "increased_stat": "special_defense",
+        "decreased_stat": "attack",
+        "favorite_flavor": "bitter",
+        "disliked_flavor": "spicy"
+    },
+    "21": {
+        "nature": "Gentle",
+        "increased_stat": "special_defense",
+        "decreased_stat": "defense",
+        "favorite_flavor": "bitter",
+        "disliked_flavor": "sour"
+    },
+    "22": {
+        "nature": "Sassy",
+        "increased_stat": "special_defense",
+        "decreased_stat": "speed",
+        "favorite_flavor": "bitter",
+        "disliked_flavor": "sweet"
+    },
+    "23": {
+        "nature": "Careful",
+        "increased_stat": "special_defense",
+        "decreased_stat": "special_attack",
+        "favorite_flavor": "bitter",
+        "disliked_flavor": "dry"
+    },
+    "24": {
+        "nature": "Quirky"
+    }
+}

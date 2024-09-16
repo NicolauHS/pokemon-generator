@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "method": "level",
+        "threshold": 16,
+        "evolves_to": 2
+    },
+    {
+        "id": 2,
+        "method": "level",
+        "threshold": 32,
+        "evolves_to": 3
+    },
+    {
+        "id": 4,
+        "method": "level",
+        "threshold": 16,
+        "evolves_to": 5
+    },
+    {
+        "id": 5,
+        "method": "level",
+        "threshold": 32,
+        "evolves_to": 6
+    },
+    {
+        "id": 7,
+        "method": "level",
+        "threshold": 16,
+        "evolves_to": 8
+    },
+    {
+        "id": 8,
+        "method": "level",
+        "threshold": 32,
+        "evolves_to": 9
+    }
+
+]
